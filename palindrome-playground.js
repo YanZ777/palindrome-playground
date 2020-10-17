@@ -40,14 +40,6 @@ The next palindrome for that number is:
 100999211 -> 101000101
 542918434 -> 542919245
 
-If after the split, the second half of the digit is 
-
-Otherwise, if the second half of the digit is less than half
-the place value of the middle digit, can grab the beginning
-part of the string, ditch the second half of the string 
-and smash the string back together.
-
-
 My intial thoughts were to take the number, cut it in half,
 reverse the first half of the string and smash it all together.
 Depending on how many digits there are, where you cut in half
@@ -110,14 +102,16 @@ value amount, e.g. 10's, 100's, 1000's, etc.
 The resulting number can then use the stragetgy of chopping
 in half, reversing, and smashing together.
 
-Note here: 
+Notes here: 
 The numbers on the second half will always change.
 The numbers in the first half may change depending, but the
 changes shoudl be limited.
-Quick shortcut / programmer's note, if the digit is less than
-10, just return the number + 1 since single digits are 
-palindromes and manging split in half arrays with one value
-is rather messy.
+If the digit is less than 10, just return the number + 1 since
+single digits are palindromes and manging split in half arrays
+with one value is rather messy.
+This solution does not handle large numbers such as the 23 digit
+one provided above. There would need to be some sort of big int
+handling built in.
 */
 
 const test = 5147;
